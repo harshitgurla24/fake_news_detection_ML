@@ -21,8 +21,7 @@ def index():
         vector = vectorizer.transform([cleaned])
         prediction = model.predict(vector)
 
-        result = " 🔴 Fake News" if prediction[0] == 1 else "🟢 Real News"
-        print(result)
+        result = "🟢 Real News" if prediction[0] == 1 else "🔴 Fake News"
 
     return render_template("index.html", result=result)
 
